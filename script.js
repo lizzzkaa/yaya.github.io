@@ -1,6 +1,11 @@
-// 1. Смена цвета фона
+// Массив из 3 цветов
+const colors = ['#ffe4e9', '#e0f0ff', '#f5e6d3']; // светло-розовый, светло-голубой, нежно-бежевый
+let currentColor = 0;
+
+// 1. Смена цвета фона по кругу
 document.getElementById('bg')?.addEventListener('click', function() {
-  document.body.style.background = '#e8d5b7';
+  currentColor = (currentColor + 1) % colors.length;
+  document.body.style.background = colors[currentColor];
 });
 
 // 2. Показать текущую дату
